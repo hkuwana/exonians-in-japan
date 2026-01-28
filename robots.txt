@@ -1,12 +1,12 @@
 # Robots.txt for Exonians in Japan
-# https://exoniansinjapan.com
+# https://exonianjapan.com
 
 # Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://exoniansinjapan.com/sitemap.xml
+Sitemap: https://exonianjapan.com/sitemap.xml
 
 # Specific bot directives
 User-agent: Googlebot
