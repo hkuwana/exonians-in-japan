@@ -1,0 +1,19 @@
+# Robots.txt for Exonians in Japan
+# https://exoniansinjapan.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://exoniansinjapan.com/sitemap.xml
+
+# Specific bot directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional, be nice to servers)
+# Crawl-delay: 10

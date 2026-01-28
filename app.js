@@ -3,7 +3,16 @@
 // ===================================
 
 // Supabase Configuration
-// Replace these with your actual Supabase project credentials
+// -----------------------
+// IMPORTANT: Before deploying, replace these values with your actual Supabase credentials.
+// See .env.example for reference. Get these from: Supabase Dashboard > Settings > API
+//
+// For local development: Copy .env.example to .env and fill in your values
+// For production: Replace these placeholders before deploying, or use your host's
+//                 environment variable injection if available.
+//
+// Note: The anon key is safe to expose in client-side code - it only allows
+//       operations permitted by your Row Level Security policies.
 const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., 'https://abc123.supabase.co'
 const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 
