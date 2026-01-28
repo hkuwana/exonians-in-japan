@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exonians in Japan | フィリップス・エクセター・アカデミー同窓会</title>
+    <meta name="description" content="日本に住んでいる、または訪問中のフィリップス・エクセター・アカデミー卒業生のコミュニティ。イベント、交流、リソース情報。">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Exonians Japan, フィリップスエクセター 同窓会, PEA Japan, エクセター 卒業生 東京, Phillips Exeter Academy alumni Japan">
+    <meta name="author" content="Hiro Kuwana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exonianjapan.com/ja">
+    <link rel="alternate" hreflang="en" href="https://exonianjapan.com/">
+    <link rel="alternate" hreflang="ja" href="https://exonianjapan.com/ja">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exonianjapan.com/ja">
+    <meta property="og:title" content="Exonians in Japan | フィリップス・エクセター同窓会">
+    <meta property="og:description" content="日本のフィリップス・エクセター・アカデミー卒業生コミュニティ">
+    <meta property="og:site_name" content="Exonians in Japan">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS + DaisyUI via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Exeter colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        exeter: {
+                            crimson: '#9B2335',
+                            dark: '#7a1c2a',
+                            light: '#c44d5e',
+                            gold: '#C4A35A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Crimson Text', serif; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm fixed top-0 z-50">
+        <div class="navbar-start">
+            <a href="index.html" class="btn btn-ghost text-xl text-exeter-crimson font-semibold">Exonians in Japan</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#about">概要</a></li>
+                <li><a href="#events">イベント</a></li>
+                <li><a href="#resources">リソース</a></li>
+                <li><a href="#connect">参加</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="index.html" class="btn btn-ghost btn-sm">English</a>
+            <a href="#connect" class="btn btn-primary btn-sm bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark ml-2">参加</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen bg-gradient-to-br from-exeter-crimson to-exeter-dark">
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-2xl">
+                <p class="text-sm uppercase tracking-widest opacity-80 mb-4">フィリップス・エクセター・アカデミー同窓会</p>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Exonians in Japan</h1>
+                <p class="text-lg md:text-xl opacity-90 mb-8">
+                    日本に住んでいる、働いている、または訪問中のPEA卒業生のためのコミュニティ。<br>
+                    つながり、経験を共有し、新しい関係を築きましょう。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#connect" class="btn btn-lg bg-white text-exeter-crimson hover:bg-gray-100 border-none">コミュニティに参加</a>
+                    <a href="#events" class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-exeter-crimson">イベント情報</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">私たちについて</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">日本全国のExoniansをつなぐ</p>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="prose prose-lg">
+                    <p>東京に住んでいても、京都を訪れていても、日本のどこを探索していても、私たちのコミュニティはすべての卒業年度のExoniansを結びつけます。</p>
+                    <p>カジュアルな交流会、プロフェッショナルなネットワーキングイベントを開催し、日本での生活や仕事に関するリソース（不動産のヒントからHRガイダンスまで）を共有しています。</p>
+                    <p class="italic text-exeter-crimson font-semibold">Non sibi. 自分のためだけでなく。</p>
+                    <p>私たちのネットワークは、日本での生活をナビゲートするExoniansを助けることで、この精神を体現しています。</p>
+                </div>
+
+                <div class="stats stats-vertical shadow">
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">50+</div>
+                        <div class="stat-desc">日本在住の卒業生</div>
+                    </div>
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">年4回</div>
+                        <div class="stat-desc">イベント開催</div>
+                    </div>
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">全卒業年度</div>
+                        <div class="stat-desc">歓迎</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 px-4 bg-base-200">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">イベント＆最新情報</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">日本各地での交流会、ネットワーキング、コミュニティの集まり</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <div class="badge badge-lg bg-exeter-crimson text-white mb-2">2025年予定</div>
+                        <h3 class="card-title">東京春の集い</h3>
+                        <p class="text-gray-600">東京エリアのExoniansのためのカジュアルな夕食会。全卒業年度歓迎。</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-outline">東京</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <div class="badge badge-lg bg-exeter-crimson text-white mb-2">2025年夏</div>
+                        <h3 class="card-title">理研学生歓迎会</h3>
+                        <p class="text-gray-600">理研プログラムに参加する現役エクセター生のための歓迎ディナー。</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-outline">埼玉/東京</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-500 mb-3">最新情報はInstagramをフォロー：</p>
+                <a href="https://instagram.com/exoniansinjapan" target="_blank" rel="noopener" class="btn btn-ghost gap-2 text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @exoniansinjapan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">日本での生活</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">日本生活を経験したExoniansからのリソースとヒント</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">不動産</h3>
+                        <p class="text-gray-600">外国人にとって日本での住居探しは難しいことがあります。保証人の要件、英語対応の不動産会社などについてのヒントを共有しています。</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">仕事・HR</h3>
+                        <p class="text-gray-600">ビザのスポンサーシップから日本の仕事文化の理解まで、経験者からのアドバイスを得られます。</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">ネットワーキング</h3>
+                        <p class="text-gray-600">金融、テック、研究、教育など、様々な業界のExoniansとつながりましょう。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-700 text-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">つながろう</h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">コミュニティに参加して、イベント情報をお見逃しなく</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- WhatsApp -->
+                <div class="card bg-white/10 backdrop-blur">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">WhatsAppグループ</h3>
+                        <p class="text-gray-300">リアルタイムの更新、質問、カジュアルな会話。</p>
+                        <a href="https://chat.whatsapp.com/YOUR_INVITE_LINK" target="_blank" rel="noopener" class="btn bg-green-500 hover:bg-green-600 border-none text-white mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsAppに参加
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="card bg-white/10 backdrop-blur">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Instagram</h3>
+                        <p class="text-gray-300">イベント写真、ストーリー、最新情報。</p>
+                        <a href="https://instagram.com/exoniansinjapan" target="_blank" rel="noopener" class="btn bg-pink-600 hover:bg-pink-700 border-none text-white mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            @exoniansinjapan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-gray-400">詳細な登録フォームは<a href="index.html#connect" class="text-exeter-light hover:underline">英語ページ</a>をご覧ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content">
+        <aside>
+            <p class="text-2xl font-bold font-serif">Exonians in Japan</p>
+            <p>日本全国のフィリップス・エクセター・アカデミー卒業生をつなぐ。</p>
+            <p class="italic text-exeter-gold mt-2">Non Sibi</p>
+        </aside>
+        <nav>
+            <h6 class="footer-title">お問い合わせ</h6>
+            <p>質問、イベントのアイデア、サイト変更：</p>
+            <a href="mailto:hiro@trykaiwa.com" class="link link-hover text-exeter-light">hiro@trykaiwa.com</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">リンク</h6>
+            <a href="https://www.exeter.edu/" target="_blank" rel="noopener" class="link link-hover">Phillips Exeter Academy</a>
+            <a href="https://www.riken.jp/" target="_blank" rel="noopener" class="link link-hover">理化学研究所</a>
+            <a href="index.html" class="link link-hover">English Version</a>
+        </nav>
+    </footer>
+    <footer class="footer footer-center p-4 bg-neutral text-neutral-content border-t border-gray-700">
+        <aside>
+            <p>Made with care by <a href="https://github.com/hkuwana" target="_blank" rel="noopener" class="link link-hover">Hiro</a></p>
+            <p class="text-xs text-gray-500">これはフィリップス・エクセター・アカデミーとは関係のない非公式の同窓会ページです。</p>
+        </aside>
+    </footer>
+</body>
+</html>

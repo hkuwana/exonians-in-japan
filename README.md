@@ -2,18 +2,22 @@
 
 A simple static website for Phillips Exeter Academy alumni living in or visiting Japan.
 
+**Live site**: [exonianjapan.com](https://exonianjapan.com)
+
 ## Tech Stack
 
 - **HTML/CSS**: Plain HTML with Tailwind CSS + DaisyUI (via CDN - no build step)
 - **Database**: Supabase (for member signups)
-- **Hosting**: Any static host (Vercel, Netlify, GitHub Pages, etc.)
+- **Analytics**: PostHog (optional)
+- **Hosting**: Vercel (recommended) or any static host
 
 ## Quick Start
 
 1. Clone this repo
 2. Set up Supabase (see below)
 3. Update `app.js` with your Supabase credentials
-4. Deploy to your preferred host
+4. (Optional) Set up PostHog analytics
+5. Deploy to Vercel
 
 ## Supabase Setup
 
@@ -34,6 +38,7 @@ CREATE TABLE members (
     name TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL,
     class_year TEXT,
+    dorm TEXT,
     phone TEXT,
     occupation TEXT,
     contact_for_events BOOLEAN DEFAULT true,
@@ -69,36 +74,54 @@ const SUPABASE_URL = 'https://your-project.supabase.co';
 const SUPABASE_ANON_KEY = 'your-anon-key-here';
 ```
 
-## Deployment
+## PostHog Analytics (Optional)
 
-### Option 1: GitHub Pages (Free)
+1. Create a free account at [posthog.com](https://posthog.com)
+2. Get your project API key
+3. In `index.html`, find the PostHog script and uncomment/update:
 
-1. Push this repo to GitHub
-2. Go to Settings > Pages
-3. Select "Deploy from a branch" and choose `main`
-4. Your site will be at `https://username.github.io/repo-name`
+```javascript
+posthog.init('YOUR_POSTHOG_KEY', {api_host: 'https://app.posthog.com'})
+```
 
-### Option 2: Vercel (Free)
+## Deployment (Vercel)
 
 1. Push to GitHub
 2. Go to [vercel.com](https://vercel.com) and import the repo
-3. Deploy (no configuration needed for static sites)
+3. Deploy (uses `vercel.json` config automatically)
 4. Add your custom domain in Vercel settings
 
-### Option 3: Netlify (Free)
+The included `vercel.json` provides:
+- Clean URLs (no .html extensions)
+- Security headers
+- Route rewrites for `/cilley`, `/updates`, `/ja`
 
-1. Push to GitHub
-2. Go to [netlify.com](https://netlify.com) and import the repo
-3. Deploy
-4. Add your custom domain
+## Open Graph Image
 
-## Custom Domain
+To create a social sharing preview image:
 
-After deploying, you can add a custom domain (e.g., `exoniansinjapan.com`):
+1. See `gemini-og-image-prompt.md` for AI image generation prompts
+2. Save as `og-image.png` in the root directory
+3. The meta tags are already configured to use it
 
-1. Purchase a domain from any registrar (Namecheap, Google Domains, etc.)
-2. Add the domain in your hosting provider's settings
-3. Update DNS records as instructed by your host
+## File Structure
+
+```
+├── index.html              # Main landing page (English)
+├── ja.html                 # Japanese version
+├── updates.html            # Alumni updates/blog page
+├── cilley.html             # Easter egg page
+├── 404.html                # Custom 404 page
+├── app.js                  # JavaScript (Supabase form handling)
+├── favicon.svg             # Site favicon
+├── vercel.json             # Vercel deployment config
+├── robots.txt              # Search engine directives
+├── sitemap.xml             # Sitemap for SEO
+├── gemini-og-image-prompt.md  # Prompts for generating OG image
+├── .env.example            # Environment variables template
+├── .gitignore              # Git ignore rules
+└── README.md               # This file
+```
 
 ## Customization
 
@@ -141,15 +164,25 @@ To view member signups:
 3. Select the `members` table
 4. You can export as CSV for email lists
 
-## File Structure
+### Dorm Stats Query
 
+Fun query to see signup breakdown by dorm:
+
+```sql
+SELECT dorm, COUNT(*) as count
+FROM members
+WHERE dorm IS NOT NULL
+GROUP BY dorm
+ORDER BY count DESC;
 ```
-├── index.html      # Main landing page
-├── updates.html    # Alumni updates/blog page
-├── app.js          # JavaScript (Supabase form handling)
-└── README.md       # This file
-```
+
+## Easter Eggs
+
+- `/cilley` - A special page for Cilley dorm pride
+- Footer has a subtle link for Wentworth folks
 
 ## Questions?
 
 Contact Hiro at hiro@trykaiwa.com
+
+GitHub: [@hkuwana](https://github.com/hkuwana)

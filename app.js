@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 class_year: formData.get('class_year') || null,
+                dorm: formData.get('dorm') || null,
                 phone: formData.get('phone') || null,
                 occupation: formData.get('occupation') || null,
                 contact_for_events: formData.get('contact_for_events') === 'on',

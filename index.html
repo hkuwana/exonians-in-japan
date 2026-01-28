@@ -20,16 +20,23 @@
     <meta property="og:description" content="Connect with Phillips Exeter Academy alumni living in or visiting Japan. Events, community, and resources for Exonians.">
     <meta property="og:site_name" content="Exonians in Japan">
     <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://exonianjapan.com/og-image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://exonianjapan.com/">
     <meta name="twitter:title" content="Exonians in Japan | Phillips Exeter Academy Alumni Network">
     <meta name="twitter:description" content="Connect with Phillips Exeter Academy alumni living in or visiting Japan. Events, community, and resources for Exonians.">
+    <meta name="twitter:image" content="https://exonianjapan.com/og-image.png">
 
     <!-- Additional SEO -->
     <meta name="geo.region" content="JP">
     <meta name="geo.placename" content="Japan">
+    <link rel="alternate" hreflang="en" href="https://exonianjapan.com/">
+    <link rel="alternate" hreflang="ja" href="https://exonianjapan.com/ja">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Tailwind CSS + DaisyUI via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -97,7 +104,8 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a href="#connect" class="btn btn-primary bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark">Join</a>
+            <a href="ja.html" class="btn btn-ghost btn-sm">日本語</a>
+            <a href="#connect" class="btn btn-primary bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark ml-2">Join</a>
         </div>
     </div>
 
@@ -350,7 +358,7 @@
                         <p class="text-gray-300 mb-4">Sign up to receive updates about events and connect with fellow Exonians.</p>
 
                         <form id="signup-form" class="space-y-4">
-                            <div class="grid md:grid-cols-2 gap-4">
+                            <div class="grid md:grid-cols-3 gap-4">
                                 <div class="form-control">
                                     <label class="label">
                                         <span class="label-text text-gray-300">Name *</span>
@@ -362,6 +370,37 @@
                                         <span class="label-text text-gray-300">Class Year</span>
                                     </label>
                                     <input type="text" name="class_year" placeholder="e.g., 2015" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400">
+                                </div>
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Dorm (optional)</span>
+                                    </label>
+                                    <select name="dorm" class="select select-bordered bg-white/10 border-white/20 text-white">
+                                        <option value="" class="text-gray-900">Select dorm...</option>
+                                        <option value="Abbot" class="text-gray-900">Abbot</option>
+                                        <option value="Amen" class="text-gray-900">Amen</option>
+                                        <option value="Bancroft" class="text-gray-900">Bancroft</option>
+                                        <option value="Cilley" class="text-gray-900">Cilley</option>
+                                        <option value="Day Student" class="text-gray-900">Day Student</option>
+                                        <option value="Dunbar" class="text-gray-900">Dunbar</option>
+                                        <option value="Dutch" class="text-gray-900">Dutch</option>
+                                        <option value="Ewald" class="text-gray-900">Ewald</option>
+                                        <option value="Hoyt" class="text-gray-900">Hoyt</option>
+                                        <option value="Kirtland" class="text-gray-900">Kirtland</option>
+                                        <option value="Knight" class="text-gray-900">Knight</option>
+                                        <option value="Lamont" class="text-gray-900">Lamont</option>
+                                        <option value="Langdell" class="text-gray-900">Langdell</option>
+                                        <option value="Main Street" class="text-gray-900">Main Street</option>
+                                        <option value="McConnell" class="text-gray-900">McConnell</option>
+                                        <option value="Merrill" class="text-gray-900">Merrill</option>
+                                        <option value="Peabody" class="text-gray-900">Peabody</option>
+                                        <option value="Soule" class="text-gray-900">Soule</option>
+                                        <option value="Webster" class="text-gray-900">Webster</option>
+                                        <option value="Wentworth" class="text-gray-900">Wentworth</option>
+                                        <option value="Wheelwright" class="text-gray-900">Wheelwright</option>
+                                        <option value="Williams" class="text-gray-900">Williams</option>
+                                        <option value="Other" class="text-gray-900">Other</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -473,5 +512,13 @@
     <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
+
+    <!-- PostHog Analytics -->
+    <!-- Replace YOUR_POSTHOG_KEY with your actual PostHog project API key -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        // Initialize PostHog - replace with your key
+        // posthog.init('YOUR_POSTHOG_KEY', {api_host: 'https://app.posthog.com'})
+    </script>
 </body>
 </html>
