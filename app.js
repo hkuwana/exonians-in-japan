@@ -4,31 +4,42 @@
 
 // Supabase Configuration
 // -----------------------
-// IMPORTANT: Before deploying, replace these values with your actual Supabase credentials.
-// See .env.example for reference. Get these from: Supabase Dashboard > Settings > API
-//
-// For local development: Copy .env.example to .env and fill in your values
-// For production: Replace these placeholders before deploying, or use your host's
-//                 environment variable injection if available.
+// Configuration is loaded from window.CONFIG which is set by:
+// - Production: /api/config.js (Vercel serverless function reading from env vars)
+// - Development: /config.js (local file, gitignored)
 //
 // Note: The anon key is safe to expose in client-side code - it only allows
 //       operations permitted by your Row Level Security policies.
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., 'https://abc123.supabase.co'
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 
-// Initialize Supabase client (only if credentials are configured)
+// Initialize Supabase client when CONFIG is available
 let supabase = null;
-if (SUPABASE_URL !== 'YOUR_SUPABASE_URL' && SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY') {
-    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function initSupabase() {
+    if (window.CONFIG && window.CONFIG.SUPABASE_URL && window.CONFIG.SUPABASE_ANON_KEY) {
+        if (window.CONFIG.SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+            supabase = window.supabase.createClient(
+                window.CONFIG.SUPABASE_URL,
+                window.CONFIG.SUPABASE_ANON_KEY
+            );
+        }
+    }
+}
+
+// Try to initialize immediately, or wait for config to load
+if (window.CONFIG) {
+    initSupabase();
+} else {
+    // Wait for config to be loaded
+    setTimeout(initSupabase, 100);
 }
 
 // Form handling
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const signupForm = document.getElementById('signup-form');
     const formMessage = document.getElementById('form-message');
 
     if (signupForm) {
-        signupForm.addEventListener('submit', async function(e) {
+        signupForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // Get form data
@@ -103,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
 
@@ -124,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 navbar.classList.add('shadow-md');
             } else {
