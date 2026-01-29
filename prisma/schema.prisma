@@ -1,0 +1,54 @@
+// Prisma schema for Exonians in Japan
+// Documentation: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL") // For Supabase connection pooling
+}
+
+// User model - synced with Supabase Auth
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  profile Profile?
+
+  @@map("users")
+}
+
+// Profile - extended user information
+model Profile {
+  id             String  @id @default(uuid())
+  userId         String  @unique @map("user_id")
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Basic info
+  firstName      String? @map("first_name")
+  lastName       String? @map("last_name")
+  displayName    String? @map("display_name")
+  bio            String?
+  avatarUrl      String? @map("avatar_url")
+
+  // Exeter info
+  graduationYear Int?    @map("graduation_year")
+
+  // Japan location
+  city           String?
+  prefecture     String?
+
+  // Contact preferences
+  isPublic       Boolean @default(false) @map("is_public")
+  showEmail      Boolean @default(false) @map("show_email")
+
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("profiles")
+}
