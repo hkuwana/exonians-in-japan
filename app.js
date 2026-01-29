@@ -45,13 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Get form data
             const formData = new FormData(signupForm);
             const data = {
-                name: formData.get('name'),
                 email: formData.get('email'),
-                class_year: formData.get('class_year') || null,
-                dorm: formData.get('dorm') || null,
-                phone: formData.get('phone') || null,
-                occupation: formData.get('occupation') || null,
-                contact_for_events: formData.get('contact_for_events') === 'on',
                 created_at: new Date().toISOString()
             };
 
