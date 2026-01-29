@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exonians in Japan | Phillips Exeter Academy Alumni Network</title>
+    <meta name="description" content="Connect with Phillips Exeter Academy alumni living in or visiting Japan. Events, community, and resources for Exonians in Tokyo, Kyoto, and beyond.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Exonians Japan, Phillips Exeter Academy alumni Japan, PEA Japan, Exeter alumni Tokyo, Exonians Tokyo, Phillips Exeter Japan, Exeter Academy Japan alumni network">
+    <meta name="author" content="Hiro Kuwana">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://exonianjapan.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exonianjapan.com/">
+    <meta property="og:title" content="Exonians in Japan | Phillips Exeter Academy Alumni Network">
+    <meta property="og:description" content="Connect with Phillips Exeter Academy alumni living in or visiting Japan. Events, community, and resources for Exonians.">
+    <meta property="og:site_name" content="Exonians in Japan">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://exonianjapan.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://exonianjapan.com/">
+    <meta name="twitter:title" content="Exonians in Japan | Phillips Exeter Academy Alumni Network">
+    <meta name="twitter:description" content="Connect with Phillips Exeter Academy alumni living in or visiting Japan. Events, community, and resources for Exonians.">
+    <meta name="twitter:image" content="https://exonianjapan.com/og-image.png">
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="JP">
+    <meta name="geo.placename" content="Japan">
+    <link rel="alternate" hreflang="en" href="https://exonianjapan.com/">
+    <link rel="alternate" hreflang="ja" href="https://exonianjapan.com/ja">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS + DaisyUI via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Exeter colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        exeter: {
+                            crimson: '#9B2335',
+                            dark: '#7a1c2a',
+                            light: '#c44d5e',
+                            gold: '#C4A35A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Crimson Text', serif; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm fixed top-0 z-50">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#riken">Riken Program</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#spotlights">Alumni</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-ghost text-xl text-exeter-crimson font-semibold">Exonians in Japan</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#about">About</a></li>
+                <li><a href="#riken">Riken Program</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#spotlights">Alumni</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#photos">Photos</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="ja.html" class="btn btn-ghost btn-sm">日本語</a>
+            <a href="#connect" class="btn btn-primary bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark ml-2">Join</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen bg-gradient-to-br from-exeter-crimson to-exeter-dark">
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-2xl">
+                <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Phillips Exeter Academy Alumni</p>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Exonians in Japan</h1>
+                <p class="text-lg md:text-xl opacity-90 mb-8">
+                    A community for PEA alumni living in, working in, or visiting Japan.
+                    Stay connected, share experiences, and build lasting relationships.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#connect" class="btn btn-lg bg-white text-exeter-crimson hover:bg-gray-100 border-none">Join Our Community</a>
+                    <a href="#events" class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-exeter-crimson">Upcoming Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">About Us</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Connecting Exonians across Japan</p>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="prose prose-lg">
+                    <p>Whether you're living in Tokyo, visiting Kyoto, or exploring anywhere in Japan, our community brings together Exonians from all graduating classes.</p>
+                    <p>We organize casual meetups, professional networking events, and help connect alumni with resources for living and working in Japan—from real estate tips to HR guidance.</p>
+                    <p class="italic text-exeter-crimson font-semibold">Non sibi. Not for oneself.</p>
+                    <p>Our network embodies this spirit by helping fellow Exonians navigate life in Japan.</p>
+                </div>
+
+                <div class="stats stats-vertical lg:stats-horizontal shadow">
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">50+</div>
+                        <div class="stat-desc">Alumni in Japan</div>
+                    </div>
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">4</div>
+                        <div class="stat-desc">Events per Year</div>
+                    </div>
+                    <div class="stat place-items-center">
+                        <div class="stat-value text-exeter-crimson">All</div>
+                        <div class="stat-desc">Classes Welcome</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Riken Program Section -->
+    <section id="riken" class="py-20 px-4 bg-base-200">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Riken Summer Program</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Research opportunities for Exeter students</p>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <blockquote class="border-l-4 border-exeter-crimson pl-6 text-lg mb-6">
+                        Each summer, select junior-year Exeter students participate in research internships at RIKEN, Japan's largest comprehensive research institution.
+                    </blockquote>
+
+                    <p class="mb-6">This prestigious program gives students hands-on laboratory experience alongside world-class scientists in fields ranging from physics to biology.</p>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-exeter-crimson mb-3">For Current Students</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-600">
+                                <li>Applications typically open in early spring</li>
+                                <li>Speak with the Science Department for details</li>
+                                <li>Connect with program alumni through our network</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-exeter-crimson mb-3">For Alumni Mentors</h3>
+                            <p class="text-gray-600">If you're a Riken program alum or work in research in Japan, consider mentoring current students.</p>
+                            <a href="#connect" class="btn btn-outline btn-sm mt-3 border-exeter-crimson text-exeter-crimson hover:bg-exeter-crimson hover:border-exeter-crimson">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Events & Updates</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Join us for meetups, networking, and community gatherings across Japan</p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Event Card 1 -->
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <div class="badge badge-lg bg-exeter-crimson text-white mb-2">TBD 2025</div>
+                        <h3 class="card-title">Spring Gathering in Tokyo</h3>
+                        <p class="text-gray-600">Casual dinner and drinks for Exonians in the Tokyo area. All classes welcome.</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-outline">Tokyo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <div class="badge badge-lg bg-exeter-crimson text-white mb-2">Summer 2025</div>
+                        <h3 class="card-title">Riken Student Welcome</h3>
+                        <p class="text-gray-600">Welcome dinner for current Exeter students participating in the Riken program.</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-outline">Saitama / Tokyo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="card bg-base-200 border-2 border-dashed border-gray-300">
+                    <div class="card-body justify-center text-center">
+                        <h3 class="card-title justify-center">Have an Event Idea?</h3>
+                        <p class="text-gray-500">Want to host a regional meetup or suggest an event?</p>
+                        <a href="#connect" class="btn btn-outline border-exeter-crimson text-exeter-crimson hover:bg-exeter-crimson hover:border-exeter-crimson mt-2">Suggest an Event</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Follow -->
+            <div class="text-center pt-8 border-t">
+                <p class="text-gray-500 mb-3">Follow us on Instagram for the latest updates and event announcements:</p>
+                <a href="https://instagram.com/exoniansinjapan" target="_blank" rel="noopener" class="btn btn-ghost gap-2 text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @exoniansinjapan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Spotlights Section -->
+    <section id="spotlights" class="py-20 px-4 bg-base-200">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Alumni Spotlights</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Discover what fellow Exonians are doing across Japan</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Placeholder Spotlight -->
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-4 pt-4">
+                        <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl w-full h-48 flex items-center justify-center">
+                            <span class="text-gray-400">Photo</span>
+                        </div>
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title">Your Story Here</h3>
+                        <p class="text-exeter-crimson text-sm">Class of 20XX</p>
+                        <p class="text-gray-600">We're looking for alumni to feature! Share what you're working on in Japan.</p>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="card bg-base-200 border-2 border-dashed border-gray-300">
+                    <div class="card-body justify-center text-center">
+                        <h3 class="card-title justify-center">Share Your Story</h3>
+                        <p class="text-gray-500">Are you an Exonian doing something interesting in Japan? We'd love to feature you.</p>
+                        <a href="#connect" class="btn btn-outline border-exeter-crimson text-exeter-crimson hover:bg-exeter-crimson hover:border-exeter-crimson mt-2">Get Featured</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Living in Japan</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Resources and tips from fellow Exonians who've navigated life in Japan</p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">Real Estate</h3>
+                        <p class="text-gray-600">Finding housing in Japan can be challenging for foreigners. Our community has tips on navigating guarantor requirements, English-friendly agents, and more.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">Work & HR</h3>
+                        <p class="text-gray-600">From visa sponsorship to understanding Japanese work culture, get advice from alumni who've been through it.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200">
+                    <div class="card-body">
+                        <h3 class="card-title text-exeter-crimson">Networking</h3>
+                        <p class="text-gray-600">Connect with Exonians across industries—finance, tech, research, education, and more.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-500 italic">Have a question? Drop it in our WhatsApp group and tap into the collective knowledge of our community.</p>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="py-20 px-4 bg-base-200">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Photos</h2>
+            <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">Moments from our gatherings and events</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+                <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl aspect-square flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">Coming soon</span>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-500">More photos on our <a href="https://instagram.com/exoniansinjapan" target="_blank" rel="noopener" class="link link-primary">Instagram</a></p>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-700 text-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-4">Stay Connected</h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">Join our community and never miss an event</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Signup Form -->
+                <div class="card bg-white/10 backdrop-blur md:col-span-2">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Join Our Network</h3>
+                        <p class="text-gray-300 mb-4">Sign up to receive updates about events and connect with fellow Exonians.</p>
+
+                        <form id="signup-form" class="space-y-4">
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Name *</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="Your name" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400" required>
+                                </div>
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Class Year</span>
+                                    </label>
+                                    <input type="text" name="class_year" placeholder="e.g., 2015" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400">
+                                </div>
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Dorm (optional)</span>
+                                    </label>
+                                    <select name="dorm" class="select select-bordered bg-white/10 border-white/20 text-white">
+                                        <option value="" class="text-gray-900">Select dorm...</option>
+                                        <option value="Abbot" class="text-gray-900">Abbot</option>
+                                        <option value="Amen" class="text-gray-900">Amen</option>
+                                        <option value="Bancroft" class="text-gray-900">Bancroft</option>
+                                        <option value="Cilley" class="text-gray-900">Cilley</option>
+                                        <option value="Day Student" class="text-gray-900">Day Student</option>
+                                        <option value="Dunbar" class="text-gray-900">Dunbar</option>
+                                        <option value="Dutch" class="text-gray-900">Dutch</option>
+                                        <option value="Ewald" class="text-gray-900">Ewald</option>
+                                        <option value="Hoyt" class="text-gray-900">Hoyt</option>
+                                        <option value="Kirtland" class="text-gray-900">Kirtland</option>
+                                        <option value="Knight" class="text-gray-900">Knight</option>
+                                        <option value="Lamont" class="text-gray-900">Lamont</option>
+                                        <option value="Langdell" class="text-gray-900">Langdell</option>
+                                        <option value="Main Street" class="text-gray-900">Main Street</option>
+                                        <option value="McConnell" class="text-gray-900">McConnell</option>
+                                        <option value="Merrill" class="text-gray-900">Merrill</option>
+                                        <option value="Peabody" class="text-gray-900">Peabody</option>
+                                        <option value="Soule" class="text-gray-900">Soule</option>
+                                        <option value="Webster" class="text-gray-900">Webster</option>
+                                        <option value="Wentworth" class="text-gray-900">Wentworth</option>
+                                        <option value="Wheelwright" class="text-gray-900">Wheelwright</option>
+                                        <option value="Williams" class="text-gray-900">Williams</option>
+                                        <option value="Other" class="text-gray-900">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Email *</span>
+                                    </label>
+                                    <input type="email" name="email" placeholder="your@email.com" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400" required>
+                                </div>
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text text-gray-300">Phone (WhatsApp)</span>
+                                    </label>
+                                    <input type="tel" name="phone" placeholder="+81 90-1234-5678" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400">
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text text-gray-300">Occupation / What you do</span>
+                                </label>
+                                <input type="text" name="occupation" placeholder="e.g., Software Engineer at Google, Student at Waseda" class="input input-bordered bg-white/10 border-white/20 text-white placeholder:text-gray-400">
+                            </div>
+
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-3">
+                                    <input type="checkbox" name="contact_for_events" checked class="checkbox checkbox-primary" />
+                                    <span class="label-text text-gray-300">Yes, contact me about upcoming events</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark text-white w-full">
+                                Join the Network
+                            </button>
+                        </form>
+
+                        <p id="form-message" class="text-center mt-4 hidden"></p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="space-y-4">
+                    <!-- WhatsApp -->
+                    <div class="card bg-white/10 backdrop-blur">
+                        <div class="card-body">
+                            <h3 class="card-title text-white text-lg">WhatsApp Group</h3>
+                            <p class="text-gray-300 text-sm">Real-time updates, questions, and casual conversation.</p>
+                            <a href="https://chat.whatsapp.com/YOUR_INVITE_LINK" target="_blank" rel="noopener" class="btn bg-green-500 hover:bg-green-600 border-none text-white mt-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Join WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="card bg-white/10 backdrop-blur">
+                        <div class="card-body">
+                            <h3 class="card-title text-white text-lg">Instagram</h3>
+                            <p class="text-gray-300 text-sm">Event photos, stories, and updates.</p>
+                            <a href="https://instagram.com/exoniansinjapan" target="_blank" rel="noopener" class="btn bg-pink-600 hover:bg-pink-700 border-none text-white mt-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                @exoniansinjapan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content">
+        <aside>
+            <p class="text-2xl font-bold font-serif">Exonians in Japan</p>
+            <p>Connecting Phillips Exeter Academy alumni across Japan.</p>
+            <p class="italic text-exeter-gold mt-2">Non Sibi</p>
+        </aside>
+        <nav>
+            <h6 class="footer-title">Contact</h6>
+            <p>Questions, event ideas, or site changes:</p>
+            <a href="mailto:hiro@trykaiwa.com" class="link link-hover text-exeter-light">hiro@trykaiwa.com</a>
+            <a href="https://github.com/hkuwana" target="_blank" rel="noopener" class="link link-hover flex items-center gap-2 mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                @hkuwana
+            </a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Links</h6>
+            <a href="https://www.exeter.edu/" target="_blank" rel="noopener" class="link link-hover">Phillips Exeter Academy</a>
+            <a href="https://www.exeter.edu/alumni" target="_blank" rel="noopener" class="link link-hover">PEA Alumni Association</a>
+            <a href="https://www.riken.jp/en/" target="_blank" rel="noopener" class="link link-hover">RIKEN</a>
+        </nav>
+    </footer>
+    <footer class="footer footer-center p-4 bg-neutral text-neutral-content border-t border-gray-700">
+        <aside>
+            <p>Made with care by <a href="https://github.com/hkuwana" target="_blank" rel="noopener" class="link link-hover">Hiro</a></p>
+            <p class="text-xs text-gray-500">This is an unofficial alumni community page, not affiliated with Phillips Exeter Academy.</p>
+            <p class="text-xs text-gray-600 mt-2"><a href="cilley.html" class="hover:text-gray-400 transition-colors">If you're from Wentworth, click here</a></p>
+        </aside>
+    </footer>
+
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+    <!-- PostHog Analytics -->
+    <!-- Replace YOUR_POSTHOG_KEY with your actual PostHog project API key -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        // Initialize PostHog - replace with your key
+        // posthog.init('YOUR_POSTHOG_KEY', {api_host: 'https://app.posthog.com'})
+    </script>
+</body>
+</html>
