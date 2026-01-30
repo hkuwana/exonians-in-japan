@@ -4,9 +4,9 @@
 
 window.CONFIG = {
     // Supabase Configuration
-    // Get these from your Supabase project: Settings > API
+    // Get these from your Supabase project: Settings > API Keys
     SUPABASE_URL: 'https://your-project-id.supabase.co',
-    SUPABASE_ANON_KEY: 'your-anon-key-here',
+    SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_your-key-here',  // Replaces legacy anon key
 
     // PostHog Analytics
     // Get these from your PostHog project: Settings > Project API Key

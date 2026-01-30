@@ -15,11 +15,13 @@
 let supabase = null;
 
 function initSupabase() {
-    if (window.CONFIG && window.CONFIG.SUPABASE_URL && window.CONFIG.SUPABASE_ANON_KEY) {
+    // Support both new publishable key and legacy anon key
+    const apiKey = window.CONFIG?.SUPABASE_PUBLISHABLE_KEY || window.CONFIG?.SUPABASE_ANON_KEY;
+    if (window.CONFIG && window.CONFIG.SUPABASE_URL && apiKey) {
         if (window.CONFIG.SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
             supabase = window.supabase.createClient(
                 window.CONFIG.SUPABASE_URL,
-                window.CONFIG.SUPABASE_ANON_KEY
+                apiKey
             );
         }
     }
