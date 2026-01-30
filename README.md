@@ -122,7 +122,58 @@ To see who has signed up:
 
 ---
 
-## Customizing the Website
+## Making Changes (No Coding Required!)
+
+You don't need to know how to code to customize this website. Use an AI coding assistant to make changes for you - just describe what you want in plain English!
+
+### Option 1: Claude Code (Recommended)
+
+[Claude Code](https://claude.ai/code) can directly edit your GitHub repository.
+
+1. Go to [claude.ai/code](https://claude.ai/code)
+2. Connect your GitHub account
+3. Open your forked repository
+4. Ask Claude to make changes, for example:
+   - *"Add a new event called 'Spring Hanami Picnic' on April 5th in Yoyogi Park"*
+   - *"Change the hero background color to dark blue"*
+   - *"Add my photo to the alumni spotlights section"*
+   - *"Update the contact email to newemail@example.com"*
+
+### Option 2: GitHub Copilot
+
+If you have [GitHub Copilot](https://github.com/features/copilot), you can edit files directly on GitHub.com:
+
+1. Open any file in your repo (e.g., `index.html`)
+2. Click the pencil icon to edit
+3. Use Copilot's suggestions or describe what you want
+
+### Option 3: ChatGPT / Other AI
+
+You can also use [ChatGPT](https://chat.openai.com) or other AI assistants:
+
+1. Copy the content of the file you want to change
+2. Paste it into the AI and describe what you want
+3. Copy the AI's response back into GitHub
+4. Commit the changes
+
+### Example Prompts
+
+Here are some things you can ask:
+
+| What you want | Example prompt |
+|---------------|----------------|
+| Add an event | *"Add a new event: Tokyo Dinner on March 15th at 7pm in Roppongi"* |
+| Change text | *"Change 'Welcome' to 'Welcome to our community'"* |
+| Add a person | *"Add John Smith (Class of 2010) to the alumni section with bio: 'Works at Google Tokyo'"* |
+| Change colors | *"Make the header background darker"* |
+| Add a link | *"Add a link to our LinkedIn group: linkedin.com/groups/example"* |
+| Fix typo | *"Change 'teh' to 'the' on the About page"* |
+
+---
+
+## Customizing the Website (Manual)
+
+If you prefer to edit files yourself:
 
 ### Update Events
 
