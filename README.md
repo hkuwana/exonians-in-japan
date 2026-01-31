@@ -45,7 +45,9 @@ Supabase stores the email addresses from people who sign up.
 CREATE TABLE members (
     id BIGSERIAL PRIMARY KEY,
     email TEXT NOT NULL UNIQUE,
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    unsubscribed BOOLEAN DEFAULT FALSE,
+    unsubscribed_at TIMESTAMPTZ
 );
 
 -- Enable security
@@ -55,10 +57,34 @@ ALTER TABLE members ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow anonymous inserts" ON members
     FOR INSERT
     WITH CHECK (true);
+
+-- Allow users to update their unsubscribe status
+CREATE POLICY "Allow anonymous updates for unsubscribe" ON members
+    FOR UPDATE
+    USING (true)
+    WITH CHECK (true);
 ```
 
 4. Click **Run** (or press Cmd+Enter / Ctrl+Enter)
 5. You should see "Success" - your table is ready!
+
+**If you already have the members table** (created before the unsubscribe feature):
+
+Run this SQL to add the new fields:
+
+```sql
+-- Add unsubscribe fields to existing members table
+ALTER TABLE members
+ADD COLUMN IF NOT EXISTS unsubscribed BOOLEAN DEFAULT FALSE,
+ADD COLUMN IF NOT EXISTS unsubscribed_at TIMESTAMPTZ;
+
+-- Add policy for unsubscribe functionality (if not already present)
+DROP POLICY IF EXISTS "Allow anonymous updates for unsubscribe" ON members;
+CREATE POLICY "Allow anonymous updates for unsubscribe" ON members
+    FOR UPDATE
+    USING (true)
+    WITH CHECK (true);
+```
 
 #### Get Your API Keys
 
@@ -107,7 +133,9 @@ window.CONFIG = {
 
 ---
 
-## Viewing Email Signups
+## Managing Email Signups
+
+### Viewing Signups
 
 To see who has signed up:
 
@@ -115,10 +143,24 @@ To see who has signed up:
 2. Open your project
 3. Click **Table Editor** in the left sidebar
 4. Click on the **members** table
-5. You'll see all the email addresses!
+5. You'll see all the email addresses with their subscription status!
 
 **To export as a spreadsheet:**
 - Click the **Export** button and choose CSV
+
+### Unsubscribe Feature
+
+The website includes an unsubscribe page where users can remove themselves from the newsletter:
+
+- **Unsubscribe URL**: `https://yourdomain.com/unsubscribe`
+- Users enter their email and are marked as unsubscribed (soft delete)
+- They can resubscribe anytime through the main signup form
+- Notifications show success/error messages for user feedback
+
+**How it works:**
+- Users remain in the database but are marked with `unsubscribed = true`
+- You can filter out unsubscribed users when sending newsletters
+- To see only active subscribers in Supabase, use this filter: `unsubscribed is false` or `unsubscribed is null`
 
 ---
 
@@ -241,6 +283,28 @@ Replace the placeholder image divs with actual images:
 - Vercel automatically redeploys when you push to GitHub
 - Wait 1-2 minutes after making changes
 - Try clearing your browser cache (Cmd+Shift+R or Ctrl+Shift+R)
+
+### Testing the Unsubscribe Feature
+
+To verify the unsubscribe functionality is working:
+
+1. **Test signup first**: Go to your website and sign up with a test email
+2. **Verify in Supabase**: Check that the email appears in the `members` table
+3. **Test unsubscribe**: Go to `/unsubscribe` page and enter the same test email
+4. **Check the result**:
+   - You should see a success message
+   - In Supabase, the `unsubscribed` field should now be `true`
+   - The `unsubscribed_at` field should show the current timestamp
+5. **Test duplicate unsubscribe**: Try unsubscribing the same email again
+   - You should see a message saying "You are already unsubscribed"
+6. **Test invalid email**: Try unsubscribing an email that doesn't exist
+   - You should see a message saying "Email not found in our system"
+
+**Common issues:**
+- If you get a "Server configuration error", make sure your Supabase environment variables are set in Vercel:
+  - Go to Vercel > Project Settings > Environment Variables
+  - Add `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`
+  - Redeploy your project after adding them
 
 ---
 

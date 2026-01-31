@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsubscribe | Exonians in Japan</title>
+    <meta name="description" content="Unsubscribe from Exonians in Japan newsletter updates.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS + DaisyUI via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Exeter colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        exeter: {
+                            crimson: '#9B2335',
+                            dark: '#7a1c2a',
+                            light: '#c44d5e',
+                            gold: '#C4A35A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Crimson Text', serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-exeter-crimson to-exeter-dark min-h-screen">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+            <a href="/" class="btn btn-ghost text-xl text-exeter-crimson font-semibold">Exonians in Japan</a>
+        </div>
+        <div class="navbar-end">
+            <a href="/" class="btn btn-ghost">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto">
+            <div class="card bg-white shadow-xl">
+                <div class="card-body">
+                    <h1 class="text-4xl font-bold text-exeter-crimson mb-4">Unsubscribe from Newsletter</h1>
+                    <p class="text-gray-600 mb-8">We're sorry to see you go! If you'd like to unsubscribe from our newsletter, please enter your email address below.</p>
+
+                    <form id="unsubscribe-form" class="space-y-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Email Address</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email-input"
+                                placeholder="your@email.com"
+                                class="input input-bordered input-lg"
+                                required
+                            >
+                        </div>
+
+                        <button
+                            type="submit"
+                            id="submit-button"
+                            class="btn btn-lg bg-exeter-crimson border-exeter-crimson hover:bg-exeter-dark hover:border-exeter-dark text-white w-full"
+                        >
+                            Unsubscribe
+                        </button>
+                    </form>
+
+                    <!-- Message Display -->
+                    <div id="message-container" class="mt-6 hidden">
+                        <div id="message-alert" role="alert" class="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span id="message-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Section -->
+                    <div class="divider mt-8"></div>
+                    <div class="text-center text-gray-600">
+                        <p class="mb-2">Changed your mind?</p>
+                        <p class="text-sm">You can always <a href="/#signup" class="link link-primary">resubscribe</a> later.</p>
+                    </div>
+
+                    <div class="mt-6 text-center text-sm text-gray-500">
+                        <p>If you have any questions or feedback, please contact us at <a href="mailto:hiro@trykaiwa.com" class="link">hiro@trykaiwa.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 text-white mt-16">
+        <div>
+            <p>&copy; 2025 Exonians in Japan. Non Sibi.</p>
+        </div>
+    </footer>
+
+    <script src="unsubscribe.js"></script>
+</body>
+</html>
