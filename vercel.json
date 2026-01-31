@@ -32,6 +32,10 @@
     {
       "source": "/ja",
       "destination": "/ja.html"
+    },
+    {
+      "source": "/unsubscribe",
+      "destination": "/unsubscribe.html"
     }
   ]
 }

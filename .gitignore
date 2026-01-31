@@ -16,3 +16,8 @@ Thumbs.db
 
 # Node modules (if ever needed)
 node_modules/
+package-lock.json
+yarn.lock
+
+# Vercel
+.vercel
