@@ -92,19 +92,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showMessage(text, type) {
-        formMessage.textContent = text;
-        formMessage.classList.remove('hidden', 'text-green-400', 'text-red-400', 'text-blue-400');
+        const messageText = document.getElementById('form-message-text');
+        const messageIcon = document.getElementById('form-message-icon');
+        const closeButton = document.getElementById('form-message-close');
 
+        // Set the message text
+        messageText.textContent = text;
+
+        // Remove all previous styling classes
+        formMessage.classList.remove(
+            'hidden',
+            'bg-green-500/20', 'border-green-500', 'text-green-300',
+            'bg-red-500/20', 'border-red-500', 'text-red-300',
+            'bg-blue-500/20', 'border-blue-500', 'text-blue-300'
+        );
+
+        // Icons for different message types
+        const icons = {
+            success: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+            error: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+            info: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>'
+        };
+
+        // Apply styling based on message type
         switch (type) {
             case 'success':
-                formMessage.classList.add('text-green-400');
+                formMessage.classList.add('bg-green-500/20', 'border', 'border-green-500', 'text-green-300');
+                messageIcon.innerHTML = icons.success;
                 break;
             case 'error':
-                formMessage.classList.add('text-red-400');
+                formMessage.classList.add('bg-red-500/20', 'border', 'border-red-500', 'text-red-300');
+                messageIcon.innerHTML = icons.error;
                 break;
             case 'info':
-                formMessage.classList.add('text-blue-400');
+                formMessage.classList.add('bg-blue-500/20', 'border', 'border-blue-500', 'text-blue-300');
+                messageIcon.innerHTML = icons.info;
                 break;
+        }
+
+        // Add close button functionality
+        closeButton.onclick = function() {
+            formMessage.classList.add('hidden');
+        };
+
+        // Auto-hide after 8 seconds for success/info messages
+        if (type === 'success' || type === 'info') {
+            setTimeout(function() {
+                formMessage.classList.add('hidden');
+            }, 8000);
         }
     }
 
