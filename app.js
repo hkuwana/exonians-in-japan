@@ -12,7 +12,8 @@
 //       operations permitted by your Row Level Security policies.
 
 // Initialize Supabase client when CONFIG is available
-let supabase = null;
+// Use var instead of let to avoid "already declared" errors if script loads twice
+var supabase = null;
 
 function initSupabase() {
     // Support both new publishable key and legacy anon key

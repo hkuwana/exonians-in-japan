@@ -4,8 +4,7 @@
   "description": "A website for Phillips Exeter Academy alumni living in or visiting Japan",
   "private": true,
   "scripts": {
-    "dev": "vercel dev",
-    "build": "vercel build"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0"
