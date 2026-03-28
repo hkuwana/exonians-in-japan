@@ -25,18 +25,6 @@
     {
       "source": "/cilley",
       "destination": "/cilley.html"
-    },
-    {
-      "source": "/updates",
-      "destination": "/updates.html"
-    },
-    {
-      "source": "/ja",
-      "destination": "/ja.html"
-    },
-    {
-      "source": "/unsubscribe",
-      "destination": "/unsubscribe.html"
     }
   ]
 }

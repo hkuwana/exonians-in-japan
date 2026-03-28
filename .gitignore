@@ -1,9 +1,3 @@
-# Environment variables
-.env
-.env.local
-.env.production
-config.js
-
 # OS files
 .DS_Store
 Thumbs.db
@@ -13,11 +7,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
-
-# Node modules (if ever needed)
-node_modules/
-package-lock.json
-yarn.lock
 
 # Vercel
 .vercel
