@@ -90,9 +90,18 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- DNS prefetch & preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Google Fonts (preloaded for faster LCP) -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS + DaisyUI via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Exeter colors -->
     <script>
@@ -111,11 +120,6 @@
             }
         }
     </script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -265,5 +269,111 @@
 
     <!-- Instagram embed script (activates any Instagram blockquote embeds above) -->
     <script async src="//www.instagram.com/embed.js"></script>
+
+    <!-- Web Vitals Debugging — enable via ?debug-cwv in the URL -->
+    <script>
+    (function() {
+        var debug = location.search.indexOf('debug-cwv') !== -1;
+        if (!debug) return;
+
+        // Use PerformanceObserver to capture Core Web Vitals
+        function observeLCP() {
+            try {
+                new PerformanceObserver(function(list) {
+                    var entries = list.getEntries();
+                    var last = entries[entries.length - 1];
+                    console.log('[CWV] LCP:', Math.round(last.startTime) + 'ms', {
+                        element: last.element ? last.element.tagName + (last.element.className ? '.' + last.element.className.split(' ')[0] : '') : 'unknown',
+                        size: last.size,
+                        url: last.url || 'N/A',
+                        loadTime: Math.round(last.loadTime) + 'ms',
+                        renderTime: Math.round(last.renderTime) + 'ms'
+                    });
+                }).observe({ type: 'largest-contentful-paint', buffered: true });
+            } catch(e) { console.warn('[CWV] LCP observer not supported'); }
+        }
+
+        function observeFCP() {
+            try {
+                new PerformanceObserver(function(list) {
+                    var entries = list.getEntries();
+                    entries.forEach(function(entry) {
+                        if (entry.name === 'first-contentful-paint') {
+                            console.log('[CWV] FCP:', Math.round(entry.startTime) + 'ms');
+                        }
+                    });
+                }).observe({ type: 'paint', buffered: true });
+            } catch(e) { console.warn('[CWV] FCP observer not supported'); }
+        }
+
+        function observeCLS() {
+            var clsValue = 0;
+            try {
+                new PerformanceObserver(function(list) {
+                    list.getEntries().forEach(function(entry) {
+                        if (!entry.hadRecentInput) {
+                            clsValue += entry.value;
+                            console.log('[CWV] CLS shift:', entry.value.toFixed(4), 'total:', clsValue.toFixed(4), {
+                                sources: entry.sources ? entry.sources.map(function(s) { return s.node ? s.node.tagName : 'unknown'; }) : []
+                            });
+                        }
+                    });
+                }).observe({ type: 'layout-shift', buffered: true });
+            } catch(e) { console.warn('[CWV] CLS observer not supported'); }
+        }
+
+        function observeLongTasks() {
+            try {
+                new PerformanceObserver(function(list) {
+                    list.getEntries().forEach(function(entry) {
+                        console.warn('[CWV] Long task:', Math.round(entry.duration) + 'ms', {
+                            name: entry.name,
+                            attribution: entry.attribution ? entry.attribution.map(function(a) { return a.containerName || a.name; }) : []
+                        });
+                    });
+                }).observe({ type: 'longtask', buffered: true });
+            } catch(e) { console.warn('[CWV] Long task observer not supported'); }
+        }
+
+        function logResourceTimings() {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    var resources = performance.getEntriesByType('resource');
+                    var blocking = resources.filter(function(r) {
+                        return r.renderBlockingStatus === 'blocking';
+                    });
+                    if (blocking.length) {
+                        console.log('[CWV] Render-blocking resources:', blocking.map(function(r) {
+                            return { name: r.name.split('/').pop().substring(0, 60), duration: Math.round(r.duration) + 'ms' };
+                        }));
+                    }
+
+                    // Log slow resources (>500ms)
+                    var slow = resources.filter(function(r) { return r.duration > 500; });
+                    if (slow.length) {
+                        console.log('[CWV] Slow resources (>500ms):', slow.map(function(r) {
+                            return { name: r.name.split('/').pop().substring(0, 60), duration: Math.round(r.duration) + 'ms', size: r.transferSize };
+                        }));
+                    }
+
+                    // TTFB
+                    var nav = performance.getEntriesByType('navigation')[0];
+                    if (nav) {
+                        console.log('[CWV] TTFB:', Math.round(nav.responseStart) + 'ms');
+                        console.log('[CWV] DOM Interactive:', Math.round(nav.domInteractive) + 'ms');
+                        console.log('[CWV] DOM Complete:', Math.round(nav.domComplete) + 'ms');
+                    }
+                }, 0);
+            });
+        }
+
+        observeLCP();
+        observeFCP();
+        observeCLS();
+        observeLongTasks();
+        logResourceTimings();
+        console.log('[CWV] Core Web Vitals debugging enabled. Metrics will appear as they are recorded.');
+    })();
+    </script>
 </body>
 </html>
